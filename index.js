@@ -166,7 +166,7 @@ player.draw()
 foreground.draw()
 
 let moving = true
-player.moving = false;
+player.animate= false;
 
 if(battle.initiated) return
 // activate battle
@@ -228,7 +228,7 @@ if(keys.w.pressed || keys.a.pressed || keys.d.pressed || keys.s.pressed){
 
 
     if(keys.w.pressed && lastKey === 'w') {
-        player.moving = true;
+        player.animate= true;
         player.image = player.sprites.up
         
         for(let i = 0; i < boundaries.length; i++){
@@ -266,7 +266,7 @@ if(keys.w.pressed || keys.a.pressed || keys.d.pressed || keys.s.pressed){
     }
     else if (keys.a.pressed && lastKey === 'a')
     {
-        player.moving = true;
+        player.animate= true;
         player.image = player.sprites.left
         for(let i = 0; i < boundaries.length; i++){
             const boundary = boundaries[i]
@@ -288,7 +288,7 @@ if(keys.w.pressed || keys.a.pressed || keys.d.pressed || keys.s.pressed){
         movables.forEach(movable => {movable.position.x += 3})
     }
     else if (keys.s.pressed && lastKey === 's') {
-        player.moving = true;
+        player.animate= true;
         player.image = player.sprites.down
         for(let i = 0; i < boundaries.length; i++){
             const boundary = boundaries[i]
@@ -310,7 +310,7 @@ if(keys.w.pressed || keys.a.pressed || keys.d.pressed || keys.s.pressed){
         movables.forEach(movable => {movable.position.y -= 3})
     }
     else if (keys.d.pressed && lastKey === 'd'){
-        player.moving = true;
+        player.animate= true;
         player.image = player.sprites.right
         for(let i = 0; i < boundaries.length; i++){
             const boundary = boundaries[i]
@@ -336,7 +336,7 @@ if(keys.w.pressed || keys.a.pressed || keys.d.pressed || keys.s.pressed){
 
 
 
-animate()
+// animate()
 
 const battleBackgroundImage = new Image()
 battleBackgroundImage.src = './images/battleBackground.png'
@@ -371,7 +371,7 @@ function animateBattle(){
 }
 
 animate()
-animateBattle()
+// animateBattle()
 let lastKey = ''
 window.addEventListener('keydown', (e) => {
 //   console.log(e.key)  
